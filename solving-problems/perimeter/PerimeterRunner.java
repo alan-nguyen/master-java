@@ -53,12 +53,18 @@ public class PerimeterRunner {
     public void testPerimeter() {
         FileResource fr = new FileResource();
         Shape s = new Shape(fr);
+
         double length = getPerimeter(s);
         System.out.println("perimeter = " + length);
+
         int totalPoints = getNumPoints(s);
         System.out.println("number of points = " + totalPoints);
+
         double averageLength = getAverageLength(s);
         System.out.println("average length = " + averageLength);
+
+        double largestSide = getLargestSide(s);
+        System.out.println("largest side = " + largestSide);
     }
 
     public static void main(String[] args) {
