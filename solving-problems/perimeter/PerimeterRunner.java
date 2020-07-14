@@ -82,6 +82,8 @@ public class PerimeterRunner {
         double largestSide = getLargestSide(s);
         System.out.println("largest side = " + largestSide);
 
+        double largestX = getLargestX(s);
+        System.out.println("largest X = " + largestX);
     }
 
     public static void main(String[] args) {
