@@ -34,6 +34,22 @@ public class PerimeterRunner {
         return averageLength;
     }
 
+    // getLargestSide
+    public double getLargestSide(Shape s) {
+        double largestSide = 0.0;
+        Point prevPt = s.getLastPoint();
+
+        for (Point currPt : s.getPoints()) {
+            double currDist = prevPt.distance(currPt);
+            if (currDist > largestSide) {
+                largestSide = currDist;
+            }
+            prevPt = currPt;
+        }
+
+        return largestSide;
+    }
+
     public void testPerimeter() {
         FileResource fr = new FileResource();
         Shape s = new Shape(fr);
