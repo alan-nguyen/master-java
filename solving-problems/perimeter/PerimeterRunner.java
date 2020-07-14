@@ -50,6 +50,22 @@ public class PerimeterRunner {
         return largestSide;
     }
 
+    // getLargestX
+    public double getLargestX(Shape s) {
+        double largestX = 0.0;
+        Point prevPt = s.getLastPoint();
+
+        for (Point currPt : s.getPoints()) {
+            double currPtX = currPt.getX();
+            if (currPtX > largestX) {
+                largestX = currPtX;
+            }
+            prevPt = currPt;
+        }
+        return largestX;
+
+    }
+
     public void testPerimeter() {
         FileResource fr = new FileResource();
         Shape s = new Shape(fr);
@@ -65,6 +81,7 @@ public class PerimeterRunner {
 
         double largestSide = getLargestSide(s);
         System.out.println("largest side = " + largestSide);
+
     }
 
     public static void main(String[] args) {
